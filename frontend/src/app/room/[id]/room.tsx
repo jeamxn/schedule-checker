@@ -252,13 +252,13 @@ const RoomIn = ({
             Object.keys(data.all).length === 0 ? (
               <p className="text-key/30">아직 선택된 날짜가 없습니다.</p>
             ) : (
-              <div className="flex flex-row gap-x-16 gap-y-4 flex-wrap">
+              <div className="flex flex-row gap-x-14 gap-y-4 flex-wrap w-full max-w-md max-md:max-w-full">
                 {
                   Object.entries(data.all).map(([date, times]) => {
                     const groupedTimes = groupContinuousTimes(date, times);
                     return groupedTimes.length ? (
                       <div key={date} className="flex flex-col items-start gap-2">
-                        <p className="font-semibold">{dayjs(date).format("M월 D일")}</p>
+                        <p className="font-semibold">{dayjs(date).format("M월 D일 (ddd)")}</p>
                         <p className="text-key/70">{groupedTimes.join(", ")}</p>
                       </div>
                     ) : null;
@@ -293,13 +293,13 @@ const RoomIn = ({
                     Object.keys(selectedUser.datetime).length === 0 ? (
                       <p className="text-key/30">아직 선택된 날짜가 없습니다.</p>
                     ) : (
-                      <div className="flex flex-row gap-x-16 gap-y-4 flex-wrap">
+                      <div className="flex flex-row gap-x-14 gap-y-4 flex-wrap w-full max-w-md max-md:max-w-full">
                         {
                           Object.entries(selectedUser.datetime).map(([date, times]) => {
                             const groupedTimes = groupContinuousTimes(date, times);
                             return (
                               <div key={date} className="flex flex-col items-start gap-2">
-                                <p className="font-semibold">{dayjs(date).format("M월 D일")}</p>
+                                <p className="font-semibold">{dayjs(date).format("M월 D일 (ddd)")}</p>
                                 {
                                   groupedTimes.length > 0 ? (
                                     <p className="text-key/70">{groupedTimes.join(", ")}</p>
