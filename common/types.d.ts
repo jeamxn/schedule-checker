@@ -28,33 +28,23 @@ export interface Room {
   name: string;
 }
 
-export interface Award {
-  icon: string;
-  url: string;
-  name: string;
-  host: string;
-  organizer: string;
-  by: string;
-  period: string;
-  when: string;
+export interface AvailableDateTime {
+  [date: string]: string[];
 }
 
-export interface Project {
-  icon: string;
-  cover: string;
-  priority: number;
-  url: string;
-  data: {
-    title: string;
-    description: string;
-    startDate: string;
-    endDate: string;
-  };
+export interface Available { 
+  roomId: string;
+  name: string;
+  password?: string;
+  datetime: AvailableDateTime;
 }
 
-export interface Team {
-  priority: number;
-  url: string;
-  icon: string;
-  name: string;
-}
+export type AvailableApi = Available & {
+  _id: string;
+  all: AvailableDateTime;
+  users: {
+    _id: string;
+    name: Available["name"];
+    datetime: Available["datetime"];
+  }[];
+};

@@ -1,5 +1,6 @@
-import dayjs from "dayjs";
 import Elysia, { t } from "elysia";
+
+import dayjs from "@common/time";
 
 import rooms from "@back/models/rooms";
 import exit, { errorElysia } from "@back/utils/error";
@@ -13,9 +14,7 @@ const createRoomRouter = new Elysia().use(rooms.model).post(
     if (
       !start.isValid()
       || !end.isValid()
-      || start.isBefore(dayjs())
       || start.isAfter(end)
-      || end.isBefore(dayjs())
     ) {
       return exit(error, "INVALID_DATETIME_FORMAT");
     }

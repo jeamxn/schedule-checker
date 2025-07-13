@@ -94,13 +94,13 @@ const Laundry = () => {
           />
           <Input
             label="시작 날짜"
-            type="datetime-local"
+            type="date"
             value={start}
             onChange={(e) => setStart(e.target.value)}
           />
           <Input
             label="종료 날짜"
-            type="datetime-local"
+            type="date"
             value={end}
             onChange={(e) => setEnd(e.target.value)}
           />
