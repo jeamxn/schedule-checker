@@ -5,24 +5,8 @@ import React from "react";
 import Providers from "@front/providers";
 
 export const metadata: Metadata = {
-  title: "Jeamin Choi · 최재민",
-  description: "Jeamin Choi's personal website",
-  openGraph: {
-    title: "Jeamin Choi · 최재민",
-    description: "Jeamin Choi's personal website",
-    url: "https://jeamxn.dev",
-    siteName: "Jeamin Choi · 최재민",
-    images: [
-      {
-        url: "https://jeamxn.dev/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Jeamin Choi's personal website",
-      },
-    ],
-    locale: "ko_KR",
-    type: "website",
-  },
+  title: "시간 맞추기 · 키우기",
+  description: "시간 맞추기 · 키우기는 친구들과 함께 시간을 맞추고, 일정을 관리할 수 있는 웹 애플리케이션입니다.",
 };
 
 export const viewport: Viewport = {
