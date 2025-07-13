@@ -252,7 +252,7 @@ const RoomIn = ({
             Object.keys(data.all).length === 0 ? (
               <p className="text-key/30">아직 선택된 날짜가 없습니다.</p>
             ) : (
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-row gap-x-16 gap-y-4 flex-wrap">
                 {
                   Object.entries(data.all).map(([date, times]) => {
                     const groupedTimes = groupContinuousTimes(date, times);
@@ -293,7 +293,7 @@ const RoomIn = ({
                     Object.keys(selectedUser.datetime).length === 0 ? (
                       <p className="text-key/30">아직 선택된 날짜가 없습니다.</p>
                     ) : (
-                      <div className="flex flex-col gap-2">
+                      <div className="flex flex-row gap-x-16 gap-y-4 flex-wrap">
                         {
                           Object.entries(selectedUser.datetime).map(([date, times]) => {
                             const groupedTimes = groupContinuousTimes(date, times);
