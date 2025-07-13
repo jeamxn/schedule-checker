@@ -274,16 +274,18 @@ const RoomIn = ({
         isLogined ? (
           <div className="flex flex-col gap-4">
             <IconTitle icon="Beenhere">참가자별 정보</IconTitle>
-            <Select.Col
-              label="참가자 선택"
-              value={selectedUserId}
-              options={data.users.map(user => user.name)}
-              values={data.users.map(user => user._id)}
-              placeholder="참가자를 선택해주세요"
-              onClick={async (value, index, _value) => {
-                setSelectedUserId(_value || "");
-              }}
-            />
+            <div className="max-w-md max-md:max-w-full">
+              <Select.Col
+                label="참가자 선택"
+                value={selectedUserId}
+                options={data.users.map(user => user.name)}
+                values={data.users.map(user => user._id)}
+                placeholder="참가자를 선택해주세요"
+                onClick={async (value, index, _value) => {
+                  setSelectedUserId(_value || "");
+                }}
+              />
+            </div>
             {
               selectedUser ? (
                 <div>
